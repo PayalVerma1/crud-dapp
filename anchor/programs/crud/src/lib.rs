@@ -2,10 +2,10 @@
 
 use anchor_lang::prelude::*;
 
-declare_id!("Count3AcZucFDPSFBAeHkQ6AvttieKUkyJ8HiQGhQwe");
+declare_id!("9ibhD7Nxu8DnJdRGwLMWTPSdKraVwpfLfDV92UgnwtK5");
 
 #[program]
-pub mod counter {
+pub mod crud {
     use super::*;
     //instructions
     pub fn create_journal_entry(ctx:Context<CreateEntry>,title:String,message:String)->Result<()>{

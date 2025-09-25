@@ -1,20 +1,14 @@
-/**
- * Program IDL in camelCase format in order to be used in JS/TS.
- *
- * Note that this is only a type helper and is not the actual IDL. The original
- * IDL can be found at `target/idl/counter.json`.
- */
-export type Counter = {
-  "address": "Count3AcZucFDPSFBAeHkQ6AvttieKUkyJ8HiQGhQwe",
+{
+  "address": "9ibhD7Nxu8DnJdRGwLMWTPSdKraVwpfLfDV92UgnwtK5",
   "metadata": {
-    "name": "counter",
+    "name": "crud",
     "version": "0.1.0",
     "spec": "0.1.0",
     "description": "Created with Anchor"
   },
   "instructions": [
     {
-      "name": "createJournalEntry",
+      "name": "create_journal_entry",
       "discriminator": [
         48,
         65,
@@ -27,7 +21,7 @@ export type Counter = {
       ],
       "accounts": [
         {
-          "name": "journalEntry",
+          "name": "journal_entry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -48,7 +42,7 @@ export type Counter = {
           "signer": true
         },
         {
-          "name": "systemProgram",
+          "name": "system_program",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -64,7 +58,7 @@ export type Counter = {
       ]
     },
     {
-      "name": "deleteJournalEntry",
+      "name": "delete_journal_entry",
       "discriminator": [
         156,
         50,
@@ -77,7 +71,7 @@ export type Counter = {
       ],
       "accounts": [
         {
-          "name": "journalEntry",
+          "name": "journal_entry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -98,14 +92,14 @@ export type Counter = {
           "signer": true
         },
         {
-          "name": "systemProgram",
+          "name": "system_program",
           "address": "11111111111111111111111111111111"
         }
       ],
       "args": []
     },
     {
-      "name": "updateJournalEntry",
+      "name": "update_journal_entry",
       "discriminator": [
         113,
         164,
@@ -118,7 +112,7 @@ export type Counter = {
       ],
       "accounts": [
         {
-          "name": "journalEntry",
+          "name": "journal_entry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -139,7 +133,7 @@ export type Counter = {
           "signer": true
         },
         {
-          "name": "systemProgram",
+          "name": "system_program",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -153,7 +147,7 @@ export type Counter = {
   ],
   "accounts": [
     {
-      "name": "journalEntryState",
+      "name": "JournalEntryState",
       "discriminator": [
         113,
         86,
@@ -168,7 +162,7 @@ export type Counter = {
   ],
   "types": [
     {
-      "name": "journalEntryState",
+      "name": "JournalEntryState",
       "type": {
         "kind": "struct",
         "fields": [
@@ -188,4 +182,4 @@ export type Counter = {
       }
     }
   ]
-};
+}

@@ -1,14 +1,20 @@
-{
+/**
+ * Program IDL in camelCase format in order to be used in JS/TS.
+ *
+ * Note that this is only a type helper and is not the actual IDL. The original
+ * IDL can be found at `target/idl/crud.json`.
+ */
+export type Crud = {
   "address": "Count3AcZucFDPSFBAeHkQ6AvttieKUkyJ8HiQGhQwe",
   "metadata": {
-    "name": "counter",
+    "name": "crud",
     "version": "0.1.0",
     "spec": "0.1.0",
     "description": "Created with Anchor"
   },
   "instructions": [
     {
-      "name": "create_journal_entry",
+      "name": "createJournalEntry",
       "discriminator": [
         48,
         65,
@@ -21,7 +27,7 @@
       ],
       "accounts": [
         {
-          "name": "journal_entry",
+          "name": "journalEntry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -42,7 +48,7 @@
           "signer": true
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -58,7 +64,7 @@
       ]
     },
     {
-      "name": "delete_journal_entry",
+      "name": "deleteJournalEntry",
       "discriminator": [
         156,
         50,
@@ -71,7 +77,7 @@
       ],
       "accounts": [
         {
-          "name": "journal_entry",
+          "name": "journalEntry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -92,14 +98,14 @@
           "signer": true
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
       "args": []
     },
     {
-      "name": "update_journal_entry",
+      "name": "updateJournalEntry",
       "discriminator": [
         113,
         164,
@@ -112,7 +118,7 @@
       ],
       "accounts": [
         {
-          "name": "journal_entry",
+          "name": "journalEntry",
           "writable": true,
           "pda": {
             "seeds": [
@@ -133,7 +139,7 @@
           "signer": true
         },
         {
-          "name": "system_program",
+          "name": "systemProgram",
           "address": "11111111111111111111111111111111"
         }
       ],
@@ -147,7 +153,7 @@
   ],
   "accounts": [
     {
-      "name": "JournalEntryState",
+      "name": "journalEntryState",
       "discriminator": [
         113,
         86,
@@ -162,7 +168,7 @@
   ],
   "types": [
     {
-      "name": "JournalEntryState",
+      "name": "journalEntryState",
       "type": {
         "kind": "struct",
         "fields": [
@@ -182,4 +188,4 @@
       }
     }
   ]
-}
+};
