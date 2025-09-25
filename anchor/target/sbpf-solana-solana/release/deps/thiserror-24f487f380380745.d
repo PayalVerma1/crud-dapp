@@ -1,0 +1,11 @@
+/home/payal/crud-dapp/anchor/target/sbpf-solana-solana/release/deps/libthiserror-24f487f380380745.rmeta: /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/lib.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/aserror.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/display.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/provide.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/var.rs
+
+/home/payal/crud-dapp/anchor/target/sbpf-solana-solana/release/deps/libthiserror-24f487f380380745.rlib: /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/lib.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/aserror.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/display.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/provide.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/var.rs
+
+/home/payal/crud-dapp/anchor/target/sbpf-solana-solana/release/deps/thiserror-24f487f380380745.d: /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/lib.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/aserror.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/display.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/provide.rs /home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/var.rs
+
+/home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/lib.rs:
+/home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/aserror.rs:
+/home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/display.rs:
+/home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/provide.rs:
+/home/payal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-2.0.12/src/var.rs:

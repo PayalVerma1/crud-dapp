@@ -7,64 +7,83 @@ declare_id!("Count3AcZucFDPSFBAeHkQ6AvttieKUkyJ8HiQGhQwe");
 #[program]
 pub mod counter {
     use super::*;
+    //instructions
+    pub fn create_journal_entry(ctx:Context<CreateEntry>,title:String,message:String)->Result<()>{
+        let journal_entry=&mut ctx.accounts.journal_entry;
+        journal_entry.owner=*ctx.accounts.owner.key;
+        journal_entry.title=title;
+        journal_entry.message=message;
+        Ok(())
 
-    pub fn close(_ctx: Context<CloseCounter>) -> Result<()> {
+    }
+    pub fn update_journal_entry(ctx:Context<UpdateEntry>,message:String)->Result<()>{
+        let journal_entry=&mut ctx.accounts.journal_entry;
+        journal_entry.message=message;
+        Ok(())
+    }
+    pub fn delete_journal_entry(_ctx:Context<DeleteEntry>)->Result<()>{
         Ok(())
     }
 
-    pub fn decrement(ctx: Context<Update>) -> Result<()> {
-        ctx.accounts.counter.count = ctx.accounts.counter.count.checked_sub(1).unwrap();
-        Ok(())
-    }
-
-    pub fn increment(ctx: Context<Update>) -> Result<()> {
-        ctx.accounts.counter.count = ctx.accounts.counter.count.checked_add(1).unwrap();
-        Ok(())
-    }
-
-    pub fn initialize(_ctx: Context<InitializeCounter>) -> Result<()> {
-        Ok(())
-    }
-
-    pub fn set(ctx: Context<Update>, value: u8) -> Result<()> {
-        ctx.accounts.counter.count = value.clone();
-        Ok(())
-    }
+   
 }
-
 #[derive(Accounts)]
-pub struct InitializeCounter<'info> {
-    #[account(mut)]
-    pub payer: Signer<'info>,
-
+#[instruction(title:String)]
+pub struct  CreateEntry<'info>{
     #[account(
-  init,
-  space = 8 + Counter::INIT_SPACE,
-  payer = payer
+        init,
+        seeds=[title.as_bytes(),owner.key().as_ref()],
+        bump,
+        space=8+JournalEntryState::INIT_SPACE,
+        payer=owner,
     )]
-    pub counter: Account<'info, Counter>,
+    pub journal_entry:Account<'info,JournalEntryState>,
+    //jounral entry account that is loaded by context
+    #[account(mut)]
+    pub owner:Signer<'info>,
+    pub system_program:Program<'info,System>,
+}
+#[derive(Accounts)]
+#[instruction(title:String)]
+pub struct UpdateEntry<'info>{
+    #[account(
+        mut,
+        seeds=[title.as_bytes(),owner.key().as_ref()],
+        bump,
+        realloc=8+JournalEntryState::INIT_SPACE,
+        realloc::payer=owner,
+        realloc::zero=true,
+    )]
+    pub journal_entry:Account<'info,JournalEntryState>,
+    #[account(mut)]
+    pub owner: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
 #[derive(Accounts)]
-pub struct CloseCounter<'info> {
-    #[account(mut)]
-    pub payer: Signer<'info>,
-
+#[instruction(title:String)]
+pub struct DeleteEntry<'info>{
     #[account(
-  mut,
-  close = payer, // close account and return lamports to payer
+        mut,
+        seeds=[title.as_bytes(),
+        owner.key().as_ref()],
+        bump,
+        close=owner,
     )]
-    pub counter: Account<'info, Counter>,
-}
+    pub journal_entry:Account<'info,JournalEntryState>  ,
+     #[account(mut)]
+    pub owner: Signer<'info>,
+    pub system_program: Program<'info, System>,
 
-#[derive(Accounts)]
-pub struct Update<'info> {
-    #[account(mut)]
-    pub counter: Account<'info, Counter>,
 }
 
 #[account]
-#[derive(InitSpace)]
-pub struct Counter {
-    count: u8,
+#[derive(InitSpace)]  //to derive how much space on chain is required for this struct
+pub struct JournalEntryState{
+    pub owner:Pubkey,
+    #[max_len(50)]
+    pub title:String,
+    #[max_len(500)]
+    pub message:String,
 }
+
+
