@@ -1,5 +1,5 @@
 {
-  "address": "9ibhD7Nxu8DnJdRGwLMWTPSdKraVwpfLfDV92UgnwtK5",
+  "address": "H3LQQdXCGzkbMXGa5hBxASiP3iBipZFX3qbJwybEbeXZ",
   "metadata": {
     "name": "crud",
     "version": "0.1.0",
@@ -96,7 +96,12 @@
           "address": "11111111111111111111111111111111"
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "_title",
+          "type": "string"
+        }
+      ]
     },
     {
       "name": "update_journal_entry",
@@ -138,6 +143,10 @@
         }
       ],
       "args": [
+        {
+          "name": "_title",
+          "type": "string"
+        },
         {
           "name": "message",
           "type": "string"

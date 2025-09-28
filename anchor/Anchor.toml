@@ -5,15 +5,15 @@ package_manager = "yarn"
 resolution = true
 skip-lint = false
 
-[programs.localnet]
-crud = "9ibhD7Nxu8DnJdRGwLMWTPSdKraVwpfLfDV92UgnwtK5"
+[programs.devnet]
+crud = "H3LQQdXCGzkbMXGa5hBxASiP3iBipZFX3qbJwybEbeXZ"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
-wallet = "~/.config/solana/id.json"
+cluster = "devnet"
+wallet = "~/.config/solana/wallets/phantom-devnet.json"
 
 [scripts]
 test = "../node_modules/.bin/jest --preset ts-jest"
